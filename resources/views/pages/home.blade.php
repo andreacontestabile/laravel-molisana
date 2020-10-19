@@ -123,7 +123,6 @@ $data = '[
   ]';
 
   $data = json_decode($data, true);
-
   $corta = [];
   $lunga = [];
   $cortissima = [];
@@ -137,23 +136,61 @@ $data = '[
           $cortissima[] = $pasta;
       }
   }
-  
+
 @endphp
 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{asset('css/app.css')}}">
+  <title>Homepage</title>
 </head>
 <body>
-    <header>
-        <div class="container">
-        <img src="https://www.lamolisana.it/wp-content/uploads/2020/05/marchio-sito-test.png" alt="Logo">
-        </div>
-    </header>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="{{asset('images/logo.png')}}" alt="Logo">
+      </div>
+    </div>
+    <nav class="main-nav">
+      <ul class="main-nav-list">
+        <li class="main-nav-list-item"><a></li>
+      </ul>
+    </nav>  
+  </header>
+  <main>
+    <section id="products">
+      <div class="container">
+          <h2>Le lunghe</h2>
+        <ul>
+          @foreach ($lunga as $pasta)
+            <li>
+              <h3>{{$pasta["titolo"]}}</h3>
+            </li>
+          @endforeach
+        </ul>
+        <h2>Le corte</h2>
+        <ul>
+          @foreach ($corta as $pasta)
+            <li>
+              <h3>{{$pasta["titolo"]}}</h3>
+            </li>
+          @endforeach
+        </ul>
+        <h2>Le cortissime</h2>
+        <ul>
+          @foreach ($cortissima as $pasta)
+            <li>
+              <h3>{{$pasta["titolo"]}}</h3>
+            </li>
+          @endforeach
+        </ul>
+      </div> 
+    </section>
+  </main>
     
     
 </body>

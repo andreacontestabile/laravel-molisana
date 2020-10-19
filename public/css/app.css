@@ -1,0 +1,41 @@
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+h2 {
+  font-size: 40px;
+  color: #002D73;
+  text-transform: uppercase;
+}
+
+header .logo {
+  display: flex;
+  justify-content: center;
+}
+
+section#products {
+  padding: 40px 80px;
+  background-color: #999;
+}
+
+section#products ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section#products ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 200px;
+  margin: 30px;
+  background-color: #fff;
+}
+
