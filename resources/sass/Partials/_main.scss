@@ -1,20 +1,23 @@
 section#products {
-  padding: 40px 80px;
+  padding: 80px;
   background-image: url('/images/products-bg.jpg');
 
   .products-list {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 
     &-item {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 350px;
-      height: 210px;
-      margin: 30px;
-      background-size: contain;
+      width: 450px;
+      height: 270px;
+      margin: 5px;
+      background-size: 100%;
+      background-position: center;
       background-repeat: no-repeat;
+      transition: background-size 0.3s;
 
       .item-overlay {
         display: flex;
@@ -23,21 +26,29 @@ section#products {
         justify-content: center;
         height: 100%;
         width: 100%;
-        padding: 0 40px;
+        padding: 0 80px;
         background-color: $overlayColor;
         color: #fff;
         text-align: center;
+        display: none;
 
         h3 {
           margin-bottom: 20px;
+          font-size: 24px;
           font-weight: 400;
           text-transform: uppercase;
         }
 
         img {
           width: 30px;
-          color: #fff;
         }
+      }
+      &:hover {
+        background-size: 120%;
+      }
+
+      &:hover .item-overlay {
+        display: flex;
       }
     }
   }
