@@ -1,25 +1,10 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+//Partials
 @import "Partials/variables";
 @import "Partials/mixins";
+@import "Partials/reset";
 @import "Partials/common";
 @import "Partials/header";
+@import "Partials/main";
 
-section#products {
-  padding: 40px 80px;
-  background-color: #999;
-
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-
-    li {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 350px;
-      height: 200px;
-      margin: 30px;
-      background-color: #fff;
-    }
-  }
- 
-}

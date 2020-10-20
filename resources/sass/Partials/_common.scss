@@ -4,6 +4,10 @@
   margin: 0 auto;
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 ul {
   list-style: none;
 }
@@ -12,4 +16,12 @@ h2 {
   font-size: 40px;
   color: $headingColor;
   text-transform: uppercase;
+}
+
+a,
+a:active,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: #000;
 }

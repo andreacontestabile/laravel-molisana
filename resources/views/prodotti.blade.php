@@ -140,58 +140,49 @@ $data = '[
 @endphp
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  <title>Homepage</title>
-</head>
-<body>
-  <header>
+@extends('layouts.layout')
+
+@section('title')
+    Prodotti
+@endsection
+
+
+@section('mainContent')
+  <section id="products">
     <div class="container">
-      <div class="logo">
-        <img src="{{asset('images/logo.png')}}" alt="Logo">
-      </div>
-    </div>
-    <nav class="main-nav">
-      <ul class="main-nav-list">
-        <li class="main-nav-list-item"><a></li>
+        <h2>Le lunghe</h2>
+      <ul class="products-list">
+        @foreach ($lunga as $pasta)
+          <li class="products-list-item" style="background-image:url('{{$pasta["src"]}}')">
+            <div class="item-overlay">
+              <h3>{{$pasta["titolo"]}}</h3>
+              <img src="{{asset('images/icon.svg')}}" alt="">
+            </div>
+          </li>
+        @endforeach
       </ul>
-    </nav>  
-  </header>
-  <main>
-    <section id="products">
-      <div class="container">
-          <h2>Le lunghe</h2>
-        <ul>
-          @foreach ($lunga as $pasta)
-            <li>
+      <h2>Le corte</h2>
+      <ul class="products-list">
+        @foreach ($corta as $pasta)
+          <li class="products-list-item" style="background-image:url('{{$pasta["src"]}}')"">
+            <div class="item-overlay">
               <h3>{{$pasta["titolo"]}}</h3>
-            </li>
-          @endforeach
-        </ul>
-        <h2>Le corte</h2>
-        <ul>
-          @foreach ($corta as $pasta)
-            <li>
+              <img src="{{asset('images/icon.svg')}}" alt="">
+            </div>
+          </li>
+        @endforeach
+      </ul>
+      <h2>Le cortissime</h2>
+      <ul class="products-list">
+        @foreach ($cortissima as $pasta)
+          <li class="products-list-item" style="background-image:url('{{$pasta["src"]}}')"">
+            <div class="item-overlay">
               <h3>{{$pasta["titolo"]}}</h3>
-            </li>
-          @endforeach
-        </ul>
-        <h2>Le cortissime</h2>
-        <ul>
-          @foreach ($cortissima as $pasta)
-            <li>
-              <h3>{{$pasta["titolo"]}}</h3>
-            </li>
-          @endforeach
-        </ul>
-      </div> 
-    </section>
-  </main>
-    
-    
-</body>
-</html>
+              <img src="{{asset('images/icon.svg')}}" alt="">
+            </div>
+          </li>
+        @endforeach
+      </ul>
+    </div> 
+  </section>
+@endsection
