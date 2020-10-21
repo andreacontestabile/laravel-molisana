@@ -26,7 +26,7 @@ Route::get('/products', function () {
         $pasta[$product["tipo"]][] = $product;
     }
 
-    return view('prodotti', $pasta);
+    return view('prodotti', ["pasta" => $pasta]);
 })->name("products");
 
 Route::get('/products/show/{id}', function () {
