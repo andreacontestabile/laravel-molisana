@@ -58,3 +58,22 @@ section#products {
   }
  
 }
+
+section#product-single {
+  background-color: $productBgColor;
+  padding: 60px 0;
+
+  .container {
+    font-size: 32px;
+    color: $headingColor;
+    
+    h1 {
+      font-size: 36px;
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

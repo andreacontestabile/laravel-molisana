@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return redirect()->route('products');
 })->name("home");
 
 Route::get('/products', function () {
@@ -25,13 +25,14 @@ Route::get('/products', function () {
         $product["id"] = $key;
         $pasta[$product["tipo"]][] = $product;
     }
-    
+
     return view('prodotti', ["pasta" => $pasta]);
 })->name("products");
 
-Route::get('/products/show/{id}', function () {
-    return view('prodotto');
-})->name("products-single");
+Route::get('/products/show/{id}', function ($id) {
+    $product = config("data.$id");
+    return view('prodotto', ["product" => $product]);
+})->name("product-single")->where('id', '[0-9]+');
 
 Route::get('/news', function () {
     return view('news');

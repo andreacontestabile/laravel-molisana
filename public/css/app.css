@@ -125,6 +125,25 @@ section#products .products-list-item:hover .item-overlay {
   display: flex;
 }
 
+section#product-single {
+  background-color: #B7DAE5;
+  padding: 60px 0;
+}
+
+section#product-single .container {
+  font-size: 32px;
+  color: #002D73;
+}
+
+section#product-single .container h1 {
+  font-size: 36px;
+  text-align: center;
+}
+
+section#product-single .container img {
+  width: 100%;
+}
+
 footer {
   padding: 80px 0 120px;
   color: #888;
