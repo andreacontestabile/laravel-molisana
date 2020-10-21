@@ -1,24 +1,3 @@
-@php
-
-  $data = config("data");
-  
-  $corta = [];
-  $lunga = [];
-  $cortissima = [];
-
-  foreach ($data as $pasta) {
-      if ($pasta["tipo"] == "corta") {
-          $corta[] = $pasta;
-      } else if ($pasta["tipo"] == "lunga") {
-          $lunga[] = $pasta;
-      } else if ($pasta["tipo"] == "cortissima") {
-          $cortissima[] = $pasta;
-      }
-  }
-
-@endphp
-
-
 @extends('layouts.layout')
 
 @section('title')
